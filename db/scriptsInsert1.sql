@@ -23,7 +23,8 @@ INSERT INTO Donaciones.Contacto (dni, estado, fecha_primer_contacto, fecha_alta,
 -- Insertar datos en PROGRAMA
 INSERT INTO Donaciones.Programa (nombre_programa, descripcion) VALUES
 ('Programa Salud', 'Aporte para programas de salud infantil'),
-('Programa Educación', 'Aporte para becas escolares');
+('Programa Educacion', 'Aporte para becas escolares'),
+('Programa Vivienda', 'Aporte para programa de vivienda propia');
 
 -- Insertar datos en MEDIO DE PAGO
 INSERT INTO Donaciones.Medio_de_Pago (nom_titular) VALUES
@@ -33,7 +34,7 @@ INSERT INTO Donaciones.Medio_de_Pago (nom_titular) VALUES
 -- Insertar datos en APORTE
 INSERT INTO Donaciones.Aporte (dni, nombre_programa, monto, frecuencia, nro_pago) VALUES
 ('19870996', 'Programa Salud', 1000.00, 'MENSUAL', 1),
-('13567880', 'Programa Educación', 1500.00, 'SEMANAL', 2);
+('13567880', 'Programa Educacion', 1500.00, 'SEMANAL', 2);
 
 -- Insertar datos en TARJETA
 INSERT INTO Donaciones.Tarjeta (nro_pago, nro_tarjeta, fecha_Venc, nom_tarjeta) VALUES

@@ -100,17 +100,16 @@ CREATE TABLE Auditoria_Eliminacion(
 	
 );
 
-CREATE OR REPLACE FUNCTION registrar_eliminacion()
+CREATE OR REPLACE FUNCTION Donaciones.registrar_eliminacion()
 RETURNS TRIGGER AS $$
 BEGIN
-	INSERT INTO Auditoria_Eliminacion (Dni, fecha_eliminacion, usuario)
+	INSERT INTO Donaciones.Auditoria_Eliminacion (Dni, fecha_eliminacion, usuario)
 	VALUES (OLD.Dni, CURRENT_DATE, 'sistema');
 	RETURN OLD;
 END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_eliminar_padrino
-BEFORE DELETE ON Padrino
+BEFORE DELETE ON Donaciones.Padrino
 FOR EACH ROW
-EXECUTE FUNCTION registrar_eliminacion();
-
+EXECUTE FUNCTION Donaciones.registrar_eliminacion();

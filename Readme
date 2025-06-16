@@ -1,0 +1,45 @@
+Proyectodb - Gestión de Padrinos y Aportes para La Ciudad de los Niños
+Este proyecto Java implementa un sistema para gestionar el programa de "Padrinos y Madrinas" de la institución 
+"La Ciudad de los Niños", una organización dedicada a atender a niños/as, adolescentes y familias en situación de 
+vulnerabilidad en Río Cuarto.  El sistema permite registrar padrinos (que pueden ser donantes o contactos), 
+sus aportes a diferentes programas, y realizar operaciones básicas de gestión de datos.
+
+Estructura del Proyecto
+
+db/: Contiene los scripts SQL necesarios para la creación de la base de datos, tablas, inserción de datos de ejemplo y 
+consultas específicas del trabajo práctico.
+lib/: Almacena las librerías externas del proyecto. Actualmente, solo se incluye el driver JDBC de PostgreSQL (versión 42.7.5).
+src/: Contiene el código fuente Java del proyecto.
+Conexion.java: Clase encargada de establecer y gestionar la conexión a la base de datos PostgreSQL.
+Proyectodb.java: Clase principal que implementa la lógica para las operaciones de inserción, eliminación y listado, y 
+el menú principal de la aplicación.                
+
+Pre-requisitos
+Para poder compilar y ejecutar este proyecto, necesitas tener instalados los siguientes componentes:
+
+Java Development Kit (JDK) 8 o superior: Puedes descargarlo desde el sitio oficial de Oracle o usar una distribución OpenJDK.
+Verificar instalación: Abre una terminal o línea de comandos y ejecuta java -version y javac -version.
+PostgreSQL Database (versión 14.0 o superior): El proyecto interactúa con una base de datos PostgreSQL. 
+Instalación: Sigue las instrucciones oficiales de PostgreSQL para tu sistema operativo.
+Configuración: Asegúrate de que el servidor PostgreSQL esté corriendo y que tienes credenciales de acceso (usuario y contraseña) a una base de datos.
+PostgreSQL JDBC Driver: La librería postgresql-42.7.5.jar ya está incluida en la carpeta lib/ del proyecto.
+
+Configuración de la Base de Datos                                                                                                                                                                            
+
+Conéctate a PostgreSQL
+Crea la base de datos
+Conéctate a la nueva BD
+Ejecuta los scripts SQL
+Configura src/Conexion.java: Actualiza URL, USER, y PASSWORD con tus credenciales de PostgreSQL.                                                                                            
+
+Compilación y Ejecución del Proyecto                                                                                                                                                                                
+
+El programa Java permite:
+Insertar un padrino (con opción a donante/contacto). 
+Eliminar un donante. 
+Listar padrinos con sus aportes a programas.                                                                                                                                                                                       
+
+Compilación y Ejecución Manual (Línea de Comandos):
+
+javac -cp ".:postgresql-42.7.5.jar" conexion.java proyectodb.java  
+java -cp ".:postgresql-42.7.5.jar" proyectodb 

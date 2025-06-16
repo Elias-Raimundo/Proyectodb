@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.time.LocalDate;
-
+import java.sql.Statement;
 
 
 public class proyectodb {
@@ -64,6 +64,16 @@ public class proyectodb {
                     int cant = sc.nextInt(); sc.nextLine();
                     for (int i = 1; i<= cant; i++){
                         System.out.println("Aporte " + i);
+                        String queryProgramas = "SELECT nombre_programa FROM Donaciones.Programa";
+                        try (Statement stmtConsulta = conn.createStatement();
+                            ResultSet rs = stmtConsulta.executeQuery(queryProgramas)) {
+                            System.out.println("Programas disponibles:");
+                            while (rs.next()) {
+                                System.out.println("- " + rs.getString("nombre_programa"));
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Error al listar los programas: " + e.getMessage());
+                        }
                         System.out.println("Nombre del programa: ");
                         String nombre_programa = sc.nextLine();
                         System.out.println("Monto: ");
